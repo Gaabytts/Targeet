@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+
+    <!-- IMPORTS CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/plans.css">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <meta name="description" content="Marketing Digital. O melhor acervo em divulgação de sites.">
+
+    <!-- -->
+</head>
+
+<body>
+    <div class="loading fadeOut">
+        <img src="../images/loading.svg">
+    </div>
+    <div class="page hidden fadeIn">
+        <!-- BEGIN:MODALS -->
+        <div class="modal closed" id="modal-login">
+            <div class="modal-close">
+                <a href="#" onclick="fnModalClose()"><i class="fas fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-content ">
+                <div class="modal-body">
+                    <div class="tabs-select">
+                        <a href="#" id="login-form" class="tab tab-selected" onclick="fnTabs(this)">Login</a>
+                        <a href="#" id="register-form" class="tab" onclick="fnTabs(this)">Cadastrar</a>
+                    </div>
+                    <div class="login-form tab-active tabs-page" id="login-form-tab">
+                        <div class="user-profile">
+                            <img src="../images/avatar.png">
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Senha">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">Entrar</button>
+                            </div>
+                            <hr>
+                            <div class="lost-password align-center">
+                                <a href="#" class="tab" id="lost-form" onclick="fnTabs(this)">Esqueceu sua senha?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register-form tabs-page" id="register-form-tab">
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="E-mail">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="CPF" id="cpf">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Telefone">
+                            </div>
+                            <center>
+                                <input type="radio" name="rsexo" value="m" class="radi">
+                                <h6 class="radi-sex">Masculino</h6>
+                                <input type="radio" name="rsexo" value="f" class="radi">
+                                <h6 class="radi-sex">Feminino</h6>
+                            </center>
+
+                            <div class="input-group">
+                                <span class="fas fa-lock ga"></span>
+                                <input type="password" placeholder="Senha" id="senha">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Confirmar Senha " id="confirmasenha">
+                            </div>
+
+
+
+
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit" id="envia" onclick="mostrar()">Cadastrar</button>
+                            </div>
+                            <div class="campo-cpf">
+                                <span class="viewCPF"></span><br><span class="aradio"></span><br>
+                                <span class="viewSenha"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lost-form tabs-page" id="lost-form-tab">
+                        <div class="form-header">
+                            <h2 class="align-center">RECUPERAR SENHA</h2>
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">
+                                                Recuperar</button>
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="button" class="btn btn-back" onclick="fnBack()">Voltar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END:MODALS -->
+
+        <!-- BEGIN:HEADER -->
+        <header>
+            <nav class="navbar">
+                <div class="container-nav">
+                    <div class="logo">
+                        <a href="index.html" class="brand-logo"><img src="../images/logo.png"> </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="plans.html">Planos e Preços</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="#modal-login" class="btn-login" onclick="fnModal(this)">Login</a></li>
+                </div>
+            </nav>
+            <div class="jumbotron">
+                <h1 class="jumbotron-heading">Planos e Preços</h1>
+                <p class="jumbotron-text">O melhor preço se encontra aqui.</p>
+            </div>
+        </header>
+
+        <!-- END:HEADER -->
+
+        <!-- BEGIN:MAIN -->
+
+        <main>
+            <!-- PLANS -->
+            <section class="plans-section section-visible fadeIn">
+                <div class="container">
+                    <hgroup>
+                        <h1 class="align-center">Conheça nossos Planos</h1>
+                        <h4 class="align-center">Marketing Digital, SEO, Redes Sociais e Otimização de Buscas</h4>
+                    </hgroup>
+                    <div class="cards-plans">
+                        <div class="box">
+                            <div class="price-table">
+                                <div class="price-head">
+                                    <h4>Basic</h4>
+                                    <h2>R$15,99<span>/mês</span></h2>
+                                </div>
+                                <div class="price-content">
+                                    <ul>
+                                        <li>Gerenciamento de Redes Sociais:<br>Instagram e Facebook</li>
+                                        <li>Publicações, Anúncios e Campanhas</li>
+                                    </ul>
+                                    <button>Contratar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="price-table">
+                                <div class="price-head">
+                                    <h4>Premium</h4>
+                                    <h2>R$39,99<span>/mês</span></h2>
+                                </div>
+                                <div class="price-content">
+                                    <ul>
+                                        <li>Gerenciamento de Redes Sociais: <br> Instagram e Facebook</li>
+                                        <li>Publicações, Anúncios e Campanhas</li>
+                                        <li>Google Adwords(anúncios no Google)</li>
+                                        <li>Otimização de mecanismos de busca Google e Bing</li>
+                                    </ul>
+                                    <button class="price-button">Contratar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="price-table">
+                                <div class="price-head">
+                                    <h4>Pro</h4>
+                                    <h2>R$20,99<span>/mês</span></h2>
+                                </div>
+                                <div class="price-content">
+                                    <ul>
+                                        <li>Publicações, anúncios e Campanhas<br></li>
+                                        <li>Google Adwords(anúncios no Google)</li>
+                                        <li>Otimização de mecanismos de busca Google e Bing</li>
+                                    </ul>
+                                    <button>Contratar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CALL -->
+            <section class="section-call section-hidden">
+                <div class="container">
+                    <hgroup>
+                        <h2>Entenda mais e planeje-se</h2>
+                        <h4>Não tenha surpresas</h4>
+                    </hgroup>
+                    <div class="doubt">
+                        <h5>Tire todas as suas dúvidas</h5>
+                        <h3>ANTES DE COMPRAR</h3>
+                        <p>Antes de comprar um plano é bom verificar se você já está pronto para começar e se escolheu o plano mais adequado. Aqui vai um checklist de coisas para fazer antes de comprar:</p><br>
+                        <ul>
+                            <li>Converse com um atendente da Targeet para verificar se é possível implementar tudo o que você precisa em algum dos planos. Tire todas suas dúvidas antes de continuar.</li> <br>
+                            <li>Avalie qual plano se adequa melhor às suas necessidades, BASIC, PRO ou PREMIUM. Se precisar, solicite ajuda a nossa equipe para descobrir qual a melhor solução para o seu momento atual – você pode acabar economizando!.</li><br>
+                            <li>Após ter escolhido algum de nossos planos, faça seu login, caso não seja cadastrado, faça seu cadastro. Por fim, contrate um de nossos planos.</li>
+                        </ul>
+                    </div>
+                    <div class="payment">
+                        <h5>Fique Tranquilo</h5>
+                        <h3>Segurança no pagamento</h3>
+                        <p>As anuidades dos planos da Pagina podem ser pagas com cartão de crédito, em até 12x, ou através de um boleto à vista, ambas maneiras através do PagSeguro.</p>
+                        <div class="payment-icons">
+                            <img src="../images/visa.png">
+                            <img src="../images/mastercard.png">
+                            <img src="../images/hipercard.png">
+                            <img src="../images/itau.png">
+                            <img src="../images/bradesco.png">
+                            <img src="../images/bancodobrasil.png">
+                            <img src="../images/boleto.png">
+                            <img src="../images/dinnerclub.png">
+                            <img src="../images/moip.png">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMMON QUESTIONS -->
+            <section class="section-hidden">
+                <div class="container">
+                    <hgroup>
+                        <h4 class="align-center">Tire todas as suas dúvidas</h4>
+                        <h2 class="align-center">Perguntas Frequentes</h2>
+                    </hgroup>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Por que os planos são tão baratos?</th>
+                                <th>Como sei que esse negócio é seguro?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nosso estilo de negócio se baseia em um processo extremamente eficiente. Toda a estrutura da Targeet é virtual, e assim conseguimos preços mais baixos aos nossos clientes.</td>
+                                <td>Todos os pagamentos são processados através do PagSeguro do UOL. Desta maneira, o dinheiro fica retido por 14 dias e você pode pedí-lo de volta a qualquer momento, caso o serviço não seja efetuado</td>
+                            </tr>
+                            <tr>
+                                <th>Como funciona o prazo em que meu negócio será divulgado?</th>
+                                <th>Existe um contrato?</th>
+                            </tr>
+                            <tr>
+                                <td>A partir do momento em que o cliente da Targeet, comprar algum de nossos planos, a divulgação será imediata.</td>
+                                <td>Nossos serviços são redigidos por um termo de uso, na qual o cliente recebe na hora da compra.</td>
+                            </tr>
+                            <tr>
+                                <th>Podemos marcar uma reunião presencial?</th>
+                                <th>A identidade visual é importante?</th>
+                            </tr>
+                            <tr>
+                                <td>Como nossa estrutura é virtual, não consutamos pessoalmente.Todo nosso atendimento é feito por e-mail e telefone.</td>
+                                <td>Sim, a imagem da marca é o seu maior atrativo, faremos com que a sua atraia o máximo de clientes e se torne referência no mercado.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- END:MAIN -->
+
+        <!-- BEGIN:FOOTER -->
+        <footer>
+            <div class="container-footer">
+                <div class="waper">
+                    <div class="center">
+                        <div class="social-icon">
+                            <a href="https://www.facebook.com/ttargeet/" alt="Facebook" title="Facebook"><i class="fab fa-facebook gab"></i></a>
+                            <a href="https://www.instagram.com/ttargeet/" alt="Instagram" title="Instagram"><i class="fab fa-instagram gab"></i></a>
+                            <a href="https://twitter.com/targeet2" title="Twitter"><i class="fab fa-twitter gab"></i></a>
+                            <a href="#" title="ttargeet@gmail.com"><i class="fas fa-envelope gab"></i></a>
+
+                        </div>
+                        <div class="select-language">
+                            <a onclick="location.href='../pt-br/'+location.href.split('/').pop()">
+                                <img src="../images/portuguese-icon.png">
+                            </a>
+                            <a onclick="location.href='../en/'+location.href.split('/').pop()">
+                                <img src="../images/english-icon.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy 2018 Copyright - Targeet, Todos os direitos reservados.</p>
+                    <img src="../images/Icone1.png" class="icone-logo">
+                </div>
+            </div>
+        </footer>
+
+        <!-- END:FOOTER -->
+
+        <!-- IMPORTS JS -->
+
+        <script src="../js/global.js"></script>
+
+        <!--  -->
+    </div>
+</body>
+
+</html>

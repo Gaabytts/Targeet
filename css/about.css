@@ -1,0 +1,576 @@
+@import "fontawesome/fontawesome-all.min.css";
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: url(../images/banner-sobre.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    margin-bottom: 1rem;
+}
+
+header::before {
+    width: 100%;
+    height: 80vh;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, .5);
+    content: "";
+    display: block;
+}
+
+.contain {
+    overflow: hidden;
+    margin: 0 10%;
+    margin-top: 5px;
+    padding: 5%;
+}
+
+.contain p {
+    text-align: justify;
+    margin-top: 10px;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.contain h3 {
+    margin-top: 50px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 320px;
+    height: 50px;
+    background: rgba(0, 0, 0, .3);
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    font-family: 'Ubuntu';
+    font-weight: lighter;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.btn-2:hover {
+    background-color: rgba(0, 66, 189, 0.5);
+    transition: .3s;
+}
+
+.btn-2 {
+    width: 332px;
+    height: 50px;
+    font-size: 16px;
+    background: #000;
+    font-weight: lighter;
+    color: #fff;
+    border: 0px;
+    border-radius: 5px;
+    position: center;
+}
+
+.signin {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.inte {
+    overflow: hidden;
+    width: 100%;
+    height: 700px;
+    background: rgb(245, 245, 245);
+    margin-top: 55px;
+}
+
+.inte h2 {
+    text-align: center;
+}
+
+.caixa {
+    margin: 0 10%;
+}
+
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 145px;
+    border: none;
+    float: left;
+}
+
+.foto2 {
+    width: 150px;
+    height: 150px;
+    border-radius: 145px;
+    border: none;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.foto:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    filter: brightness(.8);
+}
+
+.foto2:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    filter: brightness(.8);
+}
+
+.caixa {}
+
+.caixa p {
+    text-align: justify;
+}
+
+.caixa-texto {
+    padding: 10px 30px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+#esquerda {
+    margin-left: 3.5%;
+}
+
+#direita {
+    margin-left: 90%;
+}
+
+h1 {
+    font-size: 2.4em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.efeito-esquerda {
+    opacity: 0;
+    transition: linear .4s;
+    transform: translate3d(-500px, 0, 0);
+}
+
+.efeito-direita {
+    opacity: 0;
+    transition: linear .4s;
+    transform: translate3d(500px, 0, 0);
+}
+
+.efeito1 {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+
+/*caixas das imagens*/
+
+.caixa-img-seo {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-right: 15px;
+    border: none;
+    border-radius: 300px;
+    text-align: center;
+    padding: 20px 3px;
+    background-color: rgb(255, 199, 0);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa-img-seo .SEO {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-size: 95px;
+}
+
+.caixa-img-seo .info-SEO {
+    color: black;
+    font-size: 20px;
+}
+
+.caixa-img-adwords {
+    margin-top: 37px;
+    width: 300px;
+    height: 300px;
+    float: right;
+    margin-left: 15px;
+    background-color: rgb(255, 199, 0);
+    padding: 20px 5px;
+    border: none;
+    border-radius: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.caixa-img-adwords .g-Adwords {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+}
+
+.caixa-img-socialM {
+    margin-top: 30px;
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin-right: 15px;
+    border: none;
+    border-radius: 300px;
+    padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    background-color: rgb(255, 199, 0);
+    text-align: center;
+}
+
+.caixa-img-socialM .S-media {
+    display: block;
+    font-size: 50px;
+}
+
+.comments {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+}
+
+.slideshow-container {
+    max-width: 920px;
+    width: 920px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.numbertext {
+    color: #b8b8b8;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.box-comment {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 2000;
+    height: 500px;
+    background-color: #fff;
+    margin: 1rem 0;
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, .2);
+    border: 1px solid #c4c4c4;
+    line-height: 33px;
+    text-align: center;
+    font-size: 18px;
+    color: blue;
+    border-radius: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.time {
+    position: relative;
+    width: 320px;
+    min-height: 440px;
+    background-color: rgba(255, 255, 255);
+    transition: all 300ms ease-in-out;
+    float: left;
+    margin-left: 5rem;
+    margin-top: -4rem;
+    border: solid 1px rgba(194, 191, 191, 0.3);
+}
+
+.time .size {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.time .size .imagem {
+    width: 110px;
+    height: 120px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.time .size .imagem img {
+    width: 100%;
+}
+
+.time .size h2 {
+    font-size: 20px;
+    color: #262626;
+}
+
+.time .size h2 span {
+    font-size: 14px;
+    background-color: rgb(255, 203, 0);
+    color: rgba(255, 255, 255);
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+}
+
+.time .size p {
+    color: #262626;
+}
+
+.time .size ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin-top: .6rem;
+}
+
+.time .size ul li {
+    list-style: none;
+    float: left;
+}
+
+.time .size ul li a {
+    display: block;
+    color: #aaa;
+    margin: 0 auto;
+    font-size: 20px;
+    transition: all 300ms ease-in-out;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.time .size ul li:hover a {
+    color: rgb(255, 203, 0);
+    transform: rotateY(360deg);
+}
+
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+    .prev,
+    .next,
+    .text {
+        font-size: 11px;
+    }
+}
+
+.next,
+.prev {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(22, 22, 22);
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgb(255, 203, 0);
+    color: #262626;
+}
+
+.services {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box-big {
+    display: inline-block;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    margin-left: .6rem;
+    margin-bottom: 2rem;
+}
+
+.icon-box i {
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.icon-box {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    margin: .5rem auto;
+    z-index: 1;
+    border-radius: 50px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, .30);
+    background-color: rgb(255, 203, 0);
+}
+
+.description {
+    width: 21rem;
+    height: 19rem;
+    margin-top: -35px;
+    background-color: #fff;
+    border: 1px solid #e4e4e4;
+    line-height: 23px;
+    text-align: center;
+    font-size: 15px;
+    padding: 0 1rem;
+    color: rgb(0, 0, 0);
+    transition: all 300ms ease-in-out;
+}
+
+.description:hover {
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.20);
+}
+
+.description h3 {
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.description p {
+    font-size: .9rem;
+}
+
+.our-team {
+    width: 100%;
+    background-color: #717171;
+    margin-top: -5rem;
+}
+
+.value {
+    border-radius: 6px;
+    position: relative;
+    width: 295px;
+    min-height: 400px;
+    background-color: rgba(255, 255, 255);
+    transition: all 300ms ease-in-out;
+    float: left;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    border: solid 1px rgba(116, 116, 116, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.13);
+    ;
+}
+
+.value .value-size {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.value .value-size h2 {
+    font-size: 1.5em;
+    color: rgb(83, 6, 79);
+    margin-top: -8rem;
+}
+
+.value .value-size p {
+    color: #000000;
+    font-size: 1em;
+}
+
+.value .value-size ul li {
+    list-style: none;
+}
+
+.servi {
+    margin-top: -2rem;
+}
+
+.our-team {
+    background-color: rgb(228, 228, 228);
+    height: 700px;
+}
+
+.commentss {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(228, 228, 228);
+}

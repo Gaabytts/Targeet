@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+
+    <!-- IMPORTS CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <meta name="description" content="Marketing Digital. O melhor acervo em divulgação de sites.">
+
+    <!-- -->
+</head>
+
+<body>
+    <div class="loading fadeOut">
+        <img src="../images/loading.svg">
+    </div>
+    <div class="page hidden fadeIn">
+        <!-- BEGIN:MODALS -->
+        <div class="modal closed" id="modal-login">
+            <div class="modal-close">
+                <a href="#" onclick="fnModalClose()"><i class="fas fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-content ">
+                <div class="modal-body">
+                    <div class="tabs-select">
+                        <a href="#" id="login-form" class="tab tab-selected" onclick="fnTabs(this)">Sign in</a>
+                        <a href="#" id="register-form" class="tab" onclick="fnTabs(this)">Sign up</a>
+                    </div>
+                    <div class="login-form tab-active tabs-page" id="login-form-tab">
+                        <div class="user-profile">
+                            <img src="../images/avatar.png">
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Password">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">Sign in</button>
+                            </div>
+                            <hr>
+                            <div class="lost-password align-center">
+                                <a href="#" class="tab" id="lost-form" onclick="fnTabs(this)">Lost your password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register-form tabs-page" id="register-form-tab">
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="E-mail">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="CPF" id="cpf">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Telephone">
+                            </div>
+                            <center>
+                                <input type="radio" name="rsexo" value="m" class="radi">
+                                <h6 class="radi-sex">Male</h6>
+                                <input type="radio" name="rsexo" value="f" class="radi">
+                                <h6 class="radi-sex">Female</h6>
+                            </center>
+
+                            <div class="input-group">
+                                <span class="fas fa-lock ga"></span>
+                                <input type="password" placeholder="Password" id="senha">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Confirm password " id="confirmasenha">
+                            </div>
+
+
+
+
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit" id="envia" onclick="mostrar()">Sign Up</button>
+                            </div>
+                            <div class="campo-cpf">
+                                <span class="viewCPF"></span><br><span class="aradio"></span><br>
+                                <span class="viewSenha"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lost-form tabs-page" id="lost-form-tab">
+                        <div class="form-header">
+                            <h2 class="align-center">RECOVER PASSWORD</h2>
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">
+                                                To Recover</button>
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="button" class="btn btn-back" onclick="fnBack()">Come back</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END:MODALS -->
+
+        <!-- BEGIN:HEADER -->
+        <header>
+            <nav class="navbar">
+                <div class="container-nav">
+                    <div class="logo">
+                        <a href="index.html" class="brand-logo"><img src="../images/logo.png"> </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">About</a></li>
+                        <li><a href="plans.html">Plans and Prices</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#modal-login" class="btn-login" onclick="fnModal(this)">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="jumbotron">
+                <h1 class="jumbotron-heading">Contact</h1>
+                <p class="jumbotron-text">Contact us.</p>
+            </div>
+        </header>
+        <!-- END:HEADER -->
+
+        <!-- BEGIN:MAIN -->
+
+        <main>
+            <section class="section-visible fadeIn">
+                <div class="container">
+                    <div class="contact-page">
+                        <div class="information align-center">
+                            <img src="../images/email.png">
+                            <p>If you have questions or just want to get in touch, use the form below. We are looking forward to hearing from you</p><br>
+                            <p><span><i class="fas fa-envelope"></span></i> ttargeet@gmail.com</p>
+                            <p><span><i class="fas fa-phone"></i></span></i> +55(11)94631-0146</p>
+                            <p><span><i class="fas fa-phone"></i></span></i> +55(11)96101-4583</p>
+                            <p><span><i class="fas fa-phone"></i></span></i> +55(11)98875-3735</p>
+                            <p><span><i class="fas fa-phone"></i></span></i> +55(11)94802-5676</p>
+                            <p><span><i class="fas fa-phone"></i></span></i> +55(11)95369-8090</p>
+                        </div>
+
+                        <div class="box-contact">
+                            <h1 class="align-center">Contact</h1>
+                            <div class="contact-form">
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" class="input-control-dual" placeholder="Name">
+                                        <input type="text" class="input-control-dual" placeholder="E-mail">
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="input-control" placeholder="Telephone">
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="text" class="input-control" placeholder="Subject">
+                                    </div>
+                                    <div class="input-group">
+                                        <textarea placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="btn-group align-center">
+                                        <button class="btn btn-contact">Send Message</div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- END:MAIN -->
+
+        <!-- BEGIN:FOOTER -->
+        <footer>
+            <div class="container-footer">
+                <div class="waper">
+                    <div class="center">
+                        <div class="social-icon">
+                            <a href="https://www.facebook.com/ttargeet/" alt="Facebook" title="Facebook"><i class="fab fa-facebook gab"></i></a>
+                            <a href="https://www.instagram.com/ttargeet/" alt="Instagram" title="Instagram"><i class="fab fa-instagram gab"></i></a>
+                            <a href="https://twitter.com/targeet2" title="Twitter"><i class="fab fa-twitter gab"></i></a>
+                            <a href="#" title="ttargeet@gmail.com"><i class="fas fa-envelope gab"></i></a>
+
+                        </div>
+                        <div class="select-language">
+                            <a onclick="location.href='../pt-br/'+location.href.split('/').pop()">
+                                <img src="../images/portuguese-icon.png">
+                            </a>
+                            <a onclick="location.href='../en/'+location.href.split('/').pop()">
+                                <img src="../images/english-icon.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© 2018 Copyright - Targeet, All rights reserved.</p>
+                    <img src="../images/Icone1.png" class="icone-logo">
+                </div>
+            </div>
+        </footer>
+
+        <!-- END:FOOTER -->
+
+        <!-- IMPORTS JS -->
+
+        <script src="../js/global.js"></script>
+
+        <!--  -->
+    </div>
+</body>
+
+</html>

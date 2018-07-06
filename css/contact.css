@@ -1,0 +1,141 @@
+/* BEGIN:HEADER */
+
+
+/* > JUMBTRON < */
+
+header {
+    background-image: url(../images/banner-contato.jpg);
+}
+
+
+/* END:HEADER */
+
+
+/* BEGIN:MAIN */
+
+main>section {
+    padding: 4rem 0;
+}
+
+.information {
+    width: 17.5rem;
+    height: 37.5rem;
+    display: inline-block;
+    background-color: rgb(255, 199, 0);
+    border: 1px solid #f2f2f2;
+    line-height: 33px;
+    text-align: center;
+    font-size: 18px;
+    padding: 1rem 2rem;
+    color: rgb(73, 73, 73);
+}
+
+.information img {
+    width: 130px;
+}
+
+.box-contact h1 {
+    padding-top: 0;
+    padding-bottom: 2rem;
+    color: rgba(39, 39, 39, 0.82);
+    font-size: 2.5rem;
+}
+
+.contact-page {
+    display: inline-block;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box-contact {
+    width: 43.75rem;
+    height: 39.5rem;
+    background-color: rgba(255, 255, 255);
+    margin: 0 1rem;
+    box-sizing: border-box;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(72, 98, 85, 0.6);
+    display: inline-block;
+}
+
+.box-contact p {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+}
+
+.input-group .input-control {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border: 2px solid #d3d3d3;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 400ms ease-in-out;
+    color: #7a7a7a;
+}
+
+.input-group .input-control-dual {
+    width: 49.5%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border: 2px solid #d3d3d3;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 400ms ease-in-out;
+    color: #7a7a7a;
+    display: inline-block;
+}
+
+.input-group textarea {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border: 2px solid #d3d3d3;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 400ms ease-in-out;
+    color: #7a7a7a;
+}
+
+.input-group:focus,
+.input-control-dual:focus,
+.input-group textarea:focus,
+.input-group:focus,
+.input-control:focus {
+    border: 2px solid rgba(255, 204, 0, 0.849);
+}
+
+.btn-contact {
+    font-size: 0.9rem;
+    color: black;
+    margin-bottom: 3em;
+    padding: 1rem 8rem;
+    background-color: rgba(255, 204, 0, 0.849);
+    transition: all 300ms ease-in-out;
+}
+
+.btn-contact:hover {
+    background-color: rgba(236, 148, 17, 0.87);
+}
+
+.btn-group {
+    width: 100%;
+    display: inline-block;
+}
+
+
+/* END:MAIN */

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+
+    <!-- IMPORTS CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <meta name="description" content="Marketing Digital. O melhor acervo em divulgação de sites.">
+
+    <!-- -->
+</head>
+
+<body>
+    <div class="loading fadeOut">
+        <img src="../images/loading.svg">
+    </div>
+    <div class="page hidden fadeIn">
+        <!-- BEGIN:MODALS -->
+        <div class="modal closed" id="modal-login">
+            <div class="modal-close">
+                <a href="#" onclick="fnModalClose()"><i class="fas fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-content ">
+                <div class="modal-body">
+                    <div class="tabs-select">
+                        <a href="#" id="login-form" class="tab tab-selected" onclick="fnTabs(this)">Sign in</a>
+                        <a href="#" id="register-form" class="tab" onclick="fnTabs(this)">Sign up</a>
+                    </div>
+                    <div class="login-form tab-active tabs-page" id="login-form-tab">
+                        <div class="user-profile">
+                            <img src="../images/avatar.png">
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Password">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">Sign in</button>
+                            </div>
+                            <hr>
+                            <div class="lost-password align-center">
+                                <a href="#" class="tab" id="lost-form" onclick="fnTabs(this)">Lost your password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register-form tabs-page" id="register-form-tab">
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="E-mail">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="CPF" id="cpf">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Telephone">
+                            </div>
+                            <center>
+                                <input type="radio" name="rsexo" value="m" class="radi">
+                                <h6 class="radi-sex">Male</h6>
+                                <input type="radio" name="rsexo" value="f" class="radi">
+                                <h6 class="radi-sex">Female</h6>
+                            </center>
+
+                            <div class="input-group">
+                                <span class="fas fa-lock ga"></span>
+                                <input type="password" placeholder="Password" id="senha">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Confirm password " id="confirmasenha">
+                            </div>
+
+
+
+
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit" id="envia" onclick="mostrar()">Sign Up</button>
+                            </div>
+                            <div class="campo-cpf">
+                                <span class="viewCPF"></span><br><span class="aradio"></span><br>
+                                <span class="viewSenha"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lost-form tabs-page" id="lost-form-tab">
+                        <div class="form-header">
+                            <h2 class="align-center">RECOVER PASSWORD</h2>
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">
+                                                To Recover</button>
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="button" class="btn btn-back" onclick="fnBack()">Come back</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END:MODALS -->
+
+        <!-- BEGIN:HEADER -->
+        <header>
+            <nav class="navbar">
+                <div class="container-nav">
+                    <div class="logo">
+                        <a href="index.html" class="brand-logo"><img src="../images/logo.png"> </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">About</a></li>
+                        <li><a href="plans.html">Plans and Prices</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#modal-login" class="btn-login" onclick="fnModal(this)">Login</a></li>
+                </div>
+            </nav>
+            <div class="jumbotron">
+                <h1 class="jumbotron-heading">Welcome to Targeet</h1>
+                <p class="jumbotron-text">The best investment for your company.</p>
+            </div>
+        </header>
+        <!-- END:HEADER -->
+
+        <!-- BEGIN:MAIN -->
+
+        <main>
+            <!-- OUR SERVICES -->
+            <section class="section-visible fadeIn">
+                <div class="container">
+                    <h1 class="align-center">Our services</h1>
+                    <div class="services">
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-laptop fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>Visual identity</h3>
+                                <p>In the business context, visual identity is the set of symbols and elements, mainly graphics, which is designed to represent the values ​​and ideals of the enterprise and present them to the customer. A balanced, striking
+                                    and versatile graphic identity is the first step to convey confidence and stability to the client, and facilitate the identification of your company in the most varied places. </p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-search fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>SEACH ENGINE OPTIMIZATION</h3>
+                                <p>SEO (Search Engine Optimization), also known as website optimization, is quickly defined as a way to increase your website's hits through a set of techniques and strategies that allow one site improve your positioning in
+                                    the organic results of search engines such as Google and Bing.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-comment-dots fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>DIGITAL MARKETING </h3>
+                                <p>Digital Marketing is a set of strategies aimed at generating online and offline results for companies, brands and people. That is, a means of communicating with potential customers in an online and dynamic way, following
+                                    technological trends.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fab fa-google fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>GOOGLE ADWORDS</h3>
+                                <p>AdWords is Google's advertising platform. Through this service, ads are displayed to users in the form of sponsored links when someone performs a search, whether through computers or smartphones. Ads appear primarily in
+                                    search results, related to the keywords used in this search.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>MEDIA SOCIAL</h3>
+                                <p>In particular, Instagram and Facebook facilitate the recognition of the target audience that we provide interaction with the audience, audience growth, engagement, content generation and advertising that enable companies
+                                    being closer to customers, knowing their needs / problems and interests towards the brand, will be more remembered and recognized.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-address-card fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>ANNOUNCEMENTS AND CAMPAIGNS</h3>
+                                <p>A set of ad groups (ads, keywords, and bids) that share a budget, a location target, and other settings. Campaigns are often used to organize products or services you offer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PARALAX 1 -->
+
+            <div class="paralax-1">
+                <div class="jumbotron">
+                    <h1 class="jumbotron-heading">We bring accurate results to your business.</h1>
+                    <p class="jumbotron-text">We cover small and large companies.</p>
+                </div>
+            </div>
+
+            <!-- OUR CLIENTS -->
+            <section class="section-hidden">
+                <div class="container">
+                    <h1 class="align-center">Some customers</h1>
+                    <div class="card-collections">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/findnner.png" alt="Project 1" title="Project 1">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>FinDinner</h3>
+                                <p>By creating your account, you can place all your gastronomic preferences, thus facilitating your search in our App. Once you register, you can choose random restaurants in your search. And let the app do the rest for you.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="http://findinner.000webhostapp.com/index.html">Access</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/website-wesley.jpeg" alt="Project 1" title="N3RD">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>N3RD</h3>
+                                <p>N3ERD, as its name says, has been bringing nerdy trivia. The ideal platform for you that likes to always be inside the news of the geek world.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Access</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/website-resolute.png" alt="Resolute interactions" title="Resolute interactions">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Resolute interactions</h3>
+                                <p>The Resolute Interactions Group came from the union of 5 students from Computer to Internet, where each one had a distinct ability and decided to pass their knowledge to others who have difficulty, in a simple and accessible
+                                    way.
+                                </p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Access</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/makerbuino.png" alt="Makerbuino" title="Makerbuino">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Makerbuino</h3>
+                                <p>Makerbuino is a gaming console that lets you literally build your own 8-bit arcade-based retro-arcade video game console just to make your own games with any programming language.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Access</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/diamorfosi.png" alt="Diamórfosi-Games" title="Diamórfosi-Games">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Diamórfosi-Games</h3>
+                                <p>Diamórfosi, is an e-commerce sales of PC's gamers. In which, the intention is that the client builds his own pc, according to his needs. Ideal for those who enjoy games, and want to have a perfect computer to play whatever
+                                    you want.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Access</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/nexter.png" alt="Nexter" title="Nexter">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Nexter</h3>
+                                <p>Differentiated pay-TV that allows its customers to have the freedom to choose their programming grid according to their favorite programs and with an affordable price.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Access</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PARALAX 2 -->
+
+            <div class="paralax-2">
+                <div class="jumbotron">
+                    <h1 class="jumbotron-heading">Complete Marketing.</h1>
+                    <p class="jumbotron-text">Targeet will make your business achieve recognition.</p>
+                </div>
+            </div>
+
+            <!-- COMMENTS -->
+            <section class="section-hidden">
+                <div class="container">
+                    <h1 class="align-center">See the opinion of those who understand</h1>
+                    <div class="comments">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 3</div>
+                                <div class="comment-img">
+                                    <img src="../images/autor1.jpg">
+                                </div>
+                                <div class="box-comment"><br><br><br>
+                                    <p>"Simply sensational, the largest and best collection for professionals in website promotion."</p>
+                                    <p class="comment-author"><span>Arthur Fernandes Gomes</span></p>
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 3</div>
+                                <div class="comment-img">
+                                    <img src="../images/autor2.jpg">
+                                </div>
+                                <div class="box-comment"><br><br><br>
+                                    <p>"I want to congratulate the professionals of this excellent platform, my trade has grown thanks to you!"</p>
+                                    <p class="comment-author"><span>Luiza Gomes Araujo</span></p>
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 3</div>
+                                <div class="comment-img">
+                                    <img src="../images/autor3.jpg">
+                                </div>
+                                <div class="box-comment"><br><br><br>
+                                    <p>"Plataforma de alta confiança"</p>
+                                    <p class="comment-author"><span>Murilo Fernandes Melo</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- END:MAIN -->
+
+        <!-- BEGIN:FOOTER -->
+        <footer>
+            <div class="container-footer">
+                <div class="waper">
+                    <div class="center">
+                        <div class="social-icon">
+                            <a href="https://www.facebook.com/ttargeet/" alt="Facebook" title="Facebook"><i class="fab fa-facebook gab"></i></a>
+                            <a href="https://www.instagram.com/ttargeet/" alt="Instagram" title="Instagram"><i class="fab fa-instagram gab"></i></a>
+                            <a href="https://twitter.com/targeet2" title="Twitter"><i class="fab fa-twitter gab"></i></a>
+                            <a href="#" title="ttargeet@gmail.com"><i class="fas fa-envelope gab"></i></a>
+
+                            <div class="select-language">
+                                <a onclick="location.href='../pt-br/'+location.href.split('/').pop()">
+                                    <img src="../images/portuguese-icon.png">
+                                </a>
+                                <a onclick="location.href='../en/'+location.href.split('/').pop()">
+                                    <img src="../images/english-icon.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>© 2018 Copyright - Targeet, All rights reserved.</p>
+                        <img src="../images/Icone1.png" class="icone-logo">
+                    </div>
+                </div>
+        </footer>
+
+        <!-- END:FOOTER -->
+
+        <!-- IMPORTS JS -->
+
+        <script src="../js/global.js"></script>
+        <script src="../js/index.js"></script>
+
+        <!--  -->
+        </div>
+</body>
+
+</html>

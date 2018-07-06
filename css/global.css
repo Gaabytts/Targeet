@@ -1,0 +1,848 @@
+/* IMPORTS */
+
+@import '../fonts/ubuntu/css/ubuntu-all.css';
+@import '../fonts/fontawesome/css/fontawesome-all.min.css';
+
+/*  */
+
+
+/* BEGIN:GLOBAL_ELEMENTS */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-family: 'Ubuntu';
+}
+
+body {
+    margin: 0;
+}
+
+main section h1,
+h2,
+h3,
+h4,
+h5 {
+    text-transform: uppercase;
+    padding: 2rem 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+main>section {
+    padding: 1rem 0;
+}
+
+.section-hidden {
+    opacity: 0;
+}
+
+.section-visible {
+    opacity: 1;
+}
+
+.page {
+    transition: fadeIn 300ms ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.visible {
+    opacity: 1;
+    display: block;
+}
+
+.loading {
+    z-index: 10;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    position: fixed;
+}
+
+
+/* < INPUTS_STYLES > */
+
+input {
+    display: block;
+    width: 320px;
+    height: 45px;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+    font-family: 'Ubuntu', Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5em;
+    padding: 0;
+}
+
+.form-control .input-group span {
+    color: #a8a8a8;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 50px;
+    text-align: center;
+    width: 40px;
+    margin-left: 0.4rem;
+    background-color: transparent;
+    position: absolute;
+}
+
+.form-control .input-group input {
+    height: 45px;
+    border-radius: 3rem;
+}
+
+.form-control .input-group input[type="text"],
+input[type="password"] {
+    color: #e2e2e2;
+    margin-bottom: 1em;
+    padding: 0 3rem;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-input-placeholder {
+    color: #e2e2e2;
+    text-transform: uppercase;
+}
+
+ ::-moz-placeholder {
+    color: #e2e2e2;
+    text-transform: uppercase;
+}
+
+ :-ms-input-placeholder {
+    color: #e2e2e2;
+    text-transform: uppercase;
+}
+
+ :-moz-placeholder {
+    color: #e2e2e2;
+    text-transform: uppercase;
+}
+
+
+/* < BUTTON_STYLES > */
+
+.btn {
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.btn-submit {
+    margin-top: 1.4rem;
+    font-size: 0.9rem;
+    color: #e2e2e2;
+    margin-bottom: 1em;
+    padding: 1rem 8rem;
+    background-color: rgba(255, 203, 0, .6);
+    transition: all 300ms ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: rgba(249, 213, 67, 0.7)
+}
+
+.btn-back {
+    background: transparent;
+    color: #e2e2e2;
+    font-size: 0.9rem;
+    margin-bottom: 1em;
+    padding: 1rem 8rem;
+    background-color: rgba(155, 43, 31, 0.8);
+    transition: all 300ms ease-in-out;
+}
+
+.btn-back:hover {
+    background-color: rgba(226, 60, 43, 0.8);
+}
+
+
+/* < TEXT_HELPERS >*/
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-justify {
+    text-align: justify;
+}
+
+
+/* END:GLOBAL_ELEMENTS */
+
+
+/* BEGIN:MODAL_STYLES */
+
+.modal-content::before {
+    content: "";
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    display: block;
+    background-image: url('../images/login-modal.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    filter: blur(1px);
+}
+
+.modal-content::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+}
+
+.login-form {
+    position: absolute;
+    top: 25%;
+    margin-top: -50px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: 0;
+}
+
+.register-form {
+    position: absolute;
+    top: 27%;
+    margin-top: -50px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: 0;
+    height: 490px;
+}
+
+.lost-form {
+    position: absolute;
+    top: 20%;
+    margin-top: -50px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: 0;
+}
+
+.ga {
+    margin-top: 1.4rem;
+}
+
+.lost-form h2 {
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    height: 100%;
+    border-bottom: 2px solid rgb(255, 203, 0);
+    color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .2rem 0;
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease-in-out;
+}
+
+.modal::after {
+    background: rgba(0, 0, 0, .5);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.modal.closed {
+    z-index: -1;
+}
+
+.modal-content {
+    width: 52%;
+    height: 97%;
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.modal-header {
+    background: rgb(143, 143, 143);
+    height: 10%;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    margin: 1% 5%;
+    text-decoration: none;
+    color: black;
+}
+
+.modal-close i {
+    color: white;
+}
+
+.modal-close i:hover {
+    color: rgb(190, 0, 0);
+    transition: all 300ms ease-in-out;
+}
+
+.modal.opened {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lost-password {
+    width: 100%;
+}
+
+.lost-password a {
+    text-decoration: none;
+    color: rgb(255, 203, 0);
+}
+
+.tabs-page {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+}
+
+.tabs-select {
+    transition: all 600ms ease-in-out;
+}
+
+.tabs-page.tab-active {
+    visibility: visible;
+    margin-left: 0;
+    display: flex;
+    opacity: 1;
+}
+
+.tabs-select {
+    position: absolute;
+    top: 15%;
+    margin-top: -50px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: 0;
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+}
+
+.tabs-select .tab {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    color: #a8a8a8;
+}
+
+.tabs-select .tab.tab-selected {
+    border-bottom: 2px solid rgb(255, 203, 0);
+    color: white;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.form-header {
+    width: 100%;
+}
+
+.campo-cpf {
+    color: rgba(255, 255, 255);
+    text-align: center;
+}
+
+
+/* < LOGIN-REGISTER-LPASSWORD_STYLES > */
+
+.user-profile {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.user-profile img {
+    width: 150px;
+    border-radius: 100%;
+}
+
+.modal hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/* END:MODAL_STYLES */
+
+
+/* BEGIN:HEADER_STYLES */
+
+
+/* > NAVBAR < */
+
+.navbar {
+    position: fixed;
+    background: rgba(0, 0, 0, 0);
+    height: 80px;
+    line-height: 80px;
+    width: 100%;
+    transition: all 300ms ease-in-out;
+    z-index: 10;
+}
+
+.navbar .logo {
+    padding: .8rem .8rem;
+    float: left;
+    margin: 0 5rem;
+}
+
+.navbar .logo img {
+    transition: all .5s ease-in-out;
+    width: 160px;
+    margin-top: .5%;
+}
+
+.navbar.scrolling {
+    background: rgb(255, 255, 255);
+    position: fixed;
+    height: 60px;
+    line-height: 60px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navbar.scrolling .logo {
+    padding: .6rem .6rem;
+}
+
+.navbar .logo .img {
+    width: 180px;
+}
+
+.navbar.scrolling .logo img {
+    transition: all 300ms ease-in-out;
+    width: 120px;
+}
+
+.navbar.scrolling ul li a {
+    font-size: 0.8rem;
+    color: black;
+}
+
+.navbar.scrolling ul li a.btn-login {
+    padding: .6rem 2rem;
+}
+
+.navbar ul {
+    float: right;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    font-size: 0.9rem;
+    padding: .7rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    transition: color 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: rgb(255, 199, 0);
+    border-radius: 5px;
+}
+
+.navbar .container-nav {
+    margin: 0 4rem;
+}
+
+.navbar ul li a.btn-login {
+    border: 1px solid rgb(255, 199, 0);
+    padding: 1rem 3rem;
+    border-radius: 3rem;
+    transition: all 300ms ease-in-out;
+}
+
+.navbar ul li a.btn-login:hover {
+    background: rgb(255, 203, 0);
+    border-radius: 3rem;
+    transition: all 300ms ease-in-out;
+    color: white;
+}
+
+
+/* > JUMBOTRON < */
+
+.jumbotron {
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.jumbotron-heading {
+    font: 3rem/1.5 'Ubuntu';
+    margin: 0;
+    color: #fff;
+}
+
+.jumbotron-text {
+    font: 2rem/1.5 'Ubuntu';
+    margin: 0;
+    color: #fff;
+}
+
+
+/* > BACKGROUND_JUMBOTRON < */
+
+header {
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    margin-bottom: 1rem;
+}
+
+header::before {
+    width: 100%;
+    height: 80vh;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    content: "";
+    display: block;
+}
+
+
+/* END:HEADER_STYLES */
+
+
+/* BEGIN:FOOTER_STYLES */
+
+.center {
+    background-color: rgb(66, 66, 66);
+    padding: 2rem 0;
+}
+
+.container-footer {
+    width: 100%;
+}
+
+.social-icon {
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-icon a {
+    margin: 0px 16px 20px 16px;
+    display: inline-block;
+}
+
+.social-icon .gab {
+    font-size: 30px;
+    color: #262626;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(50, 50, 43);
+    line-height: 2.5;
+    transition: all 500ms ease;
+    text-align: center;
+    color: rgb(255, 203, 0);
+}
+
+.gab:hover {
+    transform: rotateY(360deg);
+    color: rgb(25, 0, 255);
+}
+
+.social-icon:before .gab {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f00;
+    transition: all 500ms ease;
+}
+
+.social-icon:hover:before {
+    top: 0;
+}
+
+.social-icon .gab:nth-child(1) i::before {
+    background-color: #3b5999;
+}
+
+.social-icon:nth-child(2) a::before {
+    background-color: #dd4b39;
+}
+
+.social-icon:nth-child(3) a::before {
+    background-color: #e4405f;
+}
+
+.social-icon:nth-child(4) a::before {
+    background-color: #55acee;
+}
+
+.copyright {
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    height: 90px;
+    text-align: center;
+}
+
+.copyright p {
+    line-height: 70px;
+    text-align: center;
+    color: rgba(255, 255, 255);
+}
+
+.select-language {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.select-language img {
+    transition: all 300ms ease-in-out;
+}
+
+.select-language a {
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.select-language img:hover {
+    transform: translateY(-20%);
+}
+
+.language-selected {
+    border-bottom: 4px dotted rgb(255, 203, 0);
+}
+
+
+/* END:FOOTER_STYLES */
+
+
+/* BEGIN:EDGE STYLES */
+
+::-ms-clear {
+    width: 2rem;
+    margin-right: -2rem;
+}
+
+ ::-ms-reveal {
+    width: 2rem;
+    margin-right: -2rem;
+    background: transparent;
+}
+
+
+/* END:EDGE STYLES */
+
+
+/* BEGIN:ANIMATION_EFFECTS */
+
+.fadeOut {
+    -webkit-animation-name: fadeOut;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fadeOut;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@-o-keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@-moz-keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-o-keyframes fadeIn {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.icone-logo {
+    width: 65px;
+    height: 65px;
+    margin: -1000px 0 0 -75rem;
+    margin-top: -50px;
+}
+
+.radi {
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.radi-sex {
+    color: #fff;
+    margin-left: 10px;
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    position: center;
+}

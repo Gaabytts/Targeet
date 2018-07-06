@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <meta name="description" content="Marketing Digital. O melhor acervo em divulgação de sites.">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: "Ubuntu";
+        }
+        
+        .page {
+            background-image: url(./images/bg.jpg);
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .page::before {
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .6);
+            content: "";
+            display: block;
+        }
+        
+        .selector-language {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 60vh;
+        }
+        
+        .languages {
+            background: rgba(0, 0, 0, 0.5);
+            width: 50vw;
+            height: 60vh;
+            z-index: 2;
+            border: 2px solid rgb(255, 203, 0);
+            border-radius: 50px;
+        }
+        
+        legend {
+            font-size: 1.2rem;
+            color: rgb(255, 203, 0);
+            text-align: center;
+            text-transform: uppercase;
+            padding: 0 1rem;
+        }
+        
+        .logo img {
+            height: 15vh;
+        }
+        
+        .logo {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 2rem;
+            padding-top: 2rem;
+        }
+        
+        .portuguese-language {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+            margin: 6rem 2.5%;
+        }
+        
+        .portuguese-language img:hover {
+            transform: scale(1.2);
+            border-bottom: 4px solid rgb(255, 203, 0);
+        }
+        
+        .portuguese-language h3 {
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .portuguese-language img {
+            width: 10rem;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .english-language {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+            margin: 6rem 2.5%;
+        }
+        
+        .english-language img:hover {
+            transform: scale(1.2);
+            border-bottom: 4px solid rgb(255, 203, 0);
+        }
+        
+        .english-language img {
+            width: 10rem;
+            transition: all 300ms ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="logo">
+            <img src="images/logo.png">
+        </div>
+        <div class="selector-language">
+            <fieldset class="languages">
+                <legend>Select your language / Selecione sua linguagem</legend>
+                <div class="portuguese-language">
+                    <a href="pt-br/index.html"><img src="./images/brazil-flag.png"></a>
+                </div>
+                <div class="english-language">
+                    <a href="en/index.html"><img src="./images/usa-flag.png">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+</html>

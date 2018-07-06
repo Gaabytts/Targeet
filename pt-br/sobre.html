@@ -1,0 +1,467 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/global.css">
+
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <meta name="description" content="Marketing Digital. O melhor acervo em divulgação de sites.">
+
+
+</head>
+
+<body>
+    <!--MODALS-->
+    <div class="loading fadeOut">
+        <img src="../images/loading.svg">
+    </div>
+    <div class="page hidden fadeIn">
+        <!-- BEGIN:MODALS -->
+        <div class="modal closed" id="modal-login">
+            <div class="modal-close">
+                <a href="#" onclick="fnModalClose()"><i class="fas fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-content ">
+                <div class="modal-body">
+                    <div class="tabs-select">
+                        <a href="#" id="login-form" class="tab tab-selected" onclick="fnTabs(this)">Login</a>
+                        <a href="#" id="register-form" class="tab" onclick="fnTabs(this)">Cadastrar</a>
+                    </div>
+                    <div class="login-form tab-active tabs-page" id="login-form-tab">
+                        <div class="user-profile">
+                            <img src="../images/avatar.png">
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Senha">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">Entrar</button>
+                            </div>
+                            <hr>
+                            <div class="lost-password align-center">
+                                <a href="#" class="tab" id="lost-form" onclick="fnTabs(this)">Esqueceu sua senha?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register-form tabs-page" id="register-form-tab">
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="E-mail">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="CPF" id="cpf">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Telefone">
+                            </div>
+                            <center>
+                                <input type="radio" name="rsexo" value="m" class="radi">
+                                <h6 class="radi-sex">Masculino</h6>
+                                <input type="radio" name="rsexo" value="f" class="radi">
+                                <h6 class="radi-sex">Feminino</h6>
+                            </center>
+
+                            <div class="input-group">
+                                <span class="fas fa-lock ga"></span>
+                                <input type="password" placeholder="Senha" id="senha">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Confirmar Senha " id="confirmasenha">
+                            </div>
+
+
+
+
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit" id="envia" onclick="mostrar()">Cadastrar</button>
+                            </div>
+                            <div class="campo-cpf">
+                                <span class="viewCPF"></span><br><span class="aradio"></span><br>
+                                <span class="viewSenha"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lost-form tabs-page" id="lost-form-tab">
+                        <div class="form-header">
+                            <h2 class="align-center">RECUPERAR SENHA</h2>
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">
+                                                Recuperar</button>
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="button" class="btn btn-back" onclick="fnBack()">Voltar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <header>
+            <nav class="navbar">
+                <div class="container-nav">
+                    <div class="logo">
+                        <a href="index.html" class="brand-logo"><img src="../images/logo.png"> </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+
+                        <li><a href="plans.html">Planos e Preços</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="#modal-login" class="btn-login" onclick="fnModal(this)">Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="jumbotron">
+                <h1 class="jumbotron-heading">Quem Somos</h1>
+                <p class="jumbotron-text"></p>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="contain">
+                    <h2 class="align-center">Quem Somos</h2>
+                    <p>
+                        Somos uma empresa que trabalha no ramo de Marketing Digital e Social Media, que conta com uma equipe, eficiente e dedicada para com os seus clientes. Oferecendo serviços que mais captam (possíveis novos clientes), segmentam e fundamentam o nosso cliente
+                        (empresa) dentro do âmbito Digital.
+                    </p>
+                </div>
+
+                <section class="contain">
+                    <div class="value">
+                        <div class="value-size">
+
+                            <h2>Missão</h2>
+                            <p>Prestar serviços de Marketing Digital, destinado a usar recursos para divulgar ao máximo a empresa e até redes socais dos clientes, com confiabilidade e custos adequados a seus negócios.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="value">
+                        <div class="value-size">
+
+                            <h2>Visão</h2>
+                            <p>Ser uma plataforma reconhecida, por sua resposabilidade e confiança, destacando-se no ramo de Marketing Digital, com sua equipe capaciatada e comprometida com a qualidade total e a satisfação dos clientes.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="value">
+                        <div class="value-size">
+
+                            <h2>Valores</h2>
+
+                            <ul>
+                                <li>Compromisso</li>
+                                <li>Confiablidade</li>
+                                <li>Ética e transparência</li>
+                                <li>Empreendedorismo e inovação</li>
+                                <li>Qualidade de nossos serviços</li>
+                                <li>Buscamos excelência empresarial</li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="contain">
+                    <section class="servi">
+                        <h1>Serviços</h1>
+                        <br>
+                        <div class="caixa-img-seo efeito-esquerda">
+                            <span class="SEO">SEO</span>
+                            <span class="info-SEO">Search Engine Optimization</span>
+                        </div>
+                        <h3 class="efeito-direita">SEO - Search Engine Optimization</h3>
+                        <p>O SEO (Search Engine Optimization), também conhecido como otimização de sites, é rapidamente definido como uma forma de aumentar os acessos do seu site através de um conjunto de técnicas e estratégias que permitem que um site melhore
+                            seu posicionamento nos resultados orgânicos dos mecanismos de busca, como Google e Bing.
+                            <br>
+                            <p><strong>O que o SEO proporciona?</strong></p>
+                            <p>Ao iniciar uma campanha de otimização no seu site, a melhora na escolha para as palavras-chave do seu negócio é diretamente proporcional à quantidade de acessos que vai receber, além de gerar também maior visibilidade para
+                                a marca e um retorno em conversões no site.</p>
+                        </p>
+
+                        <br><br><br><br>
+                        <div class="caixa-img-adwords efeito-direita">
+                            <span class="g-Adwords">GOOGLE ADWORDS</span>
+                        </div>
+                        <h3 id="adwords" class="efeito-esquerda">Google Adwords</h3>
+                        <p>O AdWords é a plataforma de publicidade do Google. Através deste serviço, anúncios são exibidos para os usuários em forma de links patrocinados quando alguém realiza uma busca, seja por meio de computadores ou smartphones. Os anúncios
+                            são exibidos principalmente nos resultados de pesquisas, relacionados às palavras-chave usadas nessa busca.</p>
+
+                        <br><br><br><br>
+                        <div class="caixa-img-socialM efeito-esquerda">
+                            <span class="S-media">SOCIAL MEDIA</span>
+                        </div>
+                        <h3 class="efeito-direita">Mídia Social</h3>
+                        <p>As redes sociais têm sido uma das ferramentas mais eficientes em Marketing Digital.São ambientes nos quais as pessoas estão o tempo todo, há espaço nelas para rodar praticamente qualquer tarefa, como pesquisas de opinião e outros
+                            serviços mais específicos.</p>
+                        <p>Em especial o Instagram e o Facebook, facilitam o reconhecimento do público-alvo que proporcionamos interação com o público, aumento de audiência, engajamento, geração de conteúdo e publicidade que possibilitam as empresas estarem
+                            mais próximas dos clientes, sabendo suas necessidades/problemas e interesses para com a marca, assim, serão mais lembradas e reconhecidas.</p>
+                </div>
+    </div>
+    </section>
+    </section>
+    </section>
+    </section>
+
+    <br><br><br><br><br>
+
+    <section class="our-team">
+
+        <h1 class="align-center">Nosso Time</h1>
+        <div class="commentss">
+
+            <div class="slideshow-container section-visible fadeIn">
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+
+
+                    <div class="box-comment"><br><br><br>
+
+                        <div class="time">
+                            <div class="size">
+                                <div class="imagem">
+                                    <img src="../images/gabrielle.png">
+                                </div>
+                                <h2>Gabrielle Torres<br><span>Front-end</span></h2>
+                                <p>Desenvolvedora Front-end, agregando a empresa os valores HTML,CSS e EcmaScript.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="time">
+                            <div class="size">
+                                <div class="imagem">
+                                    <img src="../images/gabriel.png">
+                                </div>
+                                <h2>Gabriel Gasparino Rúbia<br><span>Front-end</span></h2>
+                                <p>Desenvolvedor Front-end e entusiasta do EcmaScript.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+
+                    <div class="box-comment"><br><br><br>
+                        <div class="time">
+                            <div class="size">
+                                <div class="imagem">
+                                    <img src="../images/rodrigo.png">
+                                </div>
+                                <h2>Rodrigo Silva Ramos<br><span>Front-end</span></h2>
+                                <p>Formado em design gráfico, agrega a equipe de criação e é resposável pelo material visual veiculado pela empresa.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="time">
+                            <div class="size">
+                                <div class="imagem">
+                                    <img src="../images/kalisan.png">
+                                </div>
+                                <h2>Kalisan Seriacopi França<br><span>Front-end</span></h2>
+                                <p>Web design, cientista de dados, Analista de mídias digitais, Controller, Businnes Partner em RH.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+
+                    <div class="box-comment"><br><br><br>
+                        <div class="time">
+                            <div class="size">
+                                <div class="imagem">
+                                    <img src="../images/luana.png">
+                                </div>
+                                <h2>Luana Firmino<br><span>Front-end</span></h2>
+                                <p>Formada em T.I, conhecimento em PHP e modelagem de dados.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="time">
+                            <div class="size">
+                                <div class="imagem">
+                                    <img src="../images/rodrigo.png">
+                                </div>
+                                <h2>Rodrigo Silva Ramos <br><span>Front-end</span></h2>
+                                <p>Formado em design gráfico, agrega a equipe de criação e é resposável pelo material visual veiculado pela empresa.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-envelope"></i></a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+
+
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+
+            </div>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+    <footer>
+        <div class="container-footer">
+            <div class="waper">
+                <div class="center">
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/ttargeet/" alt="Facebook" title="Facebook"><i class="fab fa-facebook gab"></i></a>
+                        <a href="https://www.instagram.com/ttargeet/" alt="Instagram" title="Instagram"><i class="fab fa-instagram gab"></i></a>
+                        <a href="https://twitter.com/targeet2" title="Twitter"><i class="fab fa-twitter gab"></i></a>
+                        <a href="#" title="ttargeet@gmail.com"><i class="fas fa-envelope gab"></i></a>
+
+                    </div>
+                    <div class="select-language">
+                        <a onclick="location.href='../pt-br/'+location.href.split('/').pop()">
+                            <img src="../images/portuguese-icon.png">
+                        </a>
+                        <a onclick="location.href='../en/'+location.href.split('/').pop()">
+                            <img src="../images/english-icon.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy 2018 Copyright - Targeet, Todos os direitos reservados.</p>
+                <img src="../images/Icone1.png" class="icone-logo">
+            </div>
+        </div>
+    </footer>
+    </main>
+
+    <script src="../js/index.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/about.js"></script>
+</body>
+
+</html>

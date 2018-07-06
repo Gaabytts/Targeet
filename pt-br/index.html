@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+
+    <!-- IMPORTS CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <meta name="description" content="Marketing Digital. O melhor acervo em divulgação de sites.">
+
+    <!-- -->
+</head>
+
+<body>
+    <div class="loading fadeOut">
+        <img src="../images/loading.svg">
+    </div>
+    <div class="page hidden fadeIn">
+        <!-- BEGIN:MODALS -->
+        <div class="modal closed" id="modal-login">
+            <div class="modal-close">
+                <a href="#" onclick="fnModalClose()"><i class="fas fa-times fa-3x"></i></a>
+            </div>
+            <div class="modal-content ">
+                <div class="modal-body">
+                    <div class="tabs-select">
+                        <a href="#" id="login-form" class="tab tab-selected" onclick="fnTabs(this)">Login</a>
+                        <a href="#" id="register-form" class="tab" onclick="fnTabs(this)">Cadastrar</a>
+                    </div>
+                    <div class="login-form tab-active tabs-page" id="login-form-tab">
+                        <div class="user-profile">
+                            <img src="../images/avatar.png">
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Senha">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">Entrar</button>
+                            </div>
+                            <hr>
+                            <div class="lost-password align-center">
+                                <a href="#" class="tab" id="lost-form" onclick="fnTabs(this)">Esqueceu sua senha?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="register-form tabs-page" id="register-form-tab">
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="E-mail">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="CPF" id="cpf">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Telefone">
+                            </div>
+                            <center>
+                                <input type="radio" name="rsexo" value="m" class="radi">
+                                <h6 class="radi-sex">Masculino</h6>
+                                <input type="radio" name="rsexo" value="f" class="radi">
+                                <h6 class="radi-sex">Feminino</h6>
+                            </center>
+
+                            <div class="input-group">
+                                <span class="fas fa-lock ga"></span>
+                                <input type="password" placeholder="Senha" id="senha">
+                            </div>
+                            <div class="input-group">
+                                <span class="fas fa-lock"></span>
+                                <input type="password" placeholder="Confirmar Senha " id="confirmasenha">
+                            </div>
+
+
+
+
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit" id="envia" onclick="mostrar()">Cadastrar</button>
+                            </div>
+                            <div class="campo-cpf">
+                                <span class="viewCPF"></span><br><span class="aradio"></span><br>
+                                <span class="viewSenha"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="lost-form tabs-page" id="lost-form-tab">
+                        <div class="form-header">
+                            <h2 class="align-center">RECUPERAR SENHA</h2>
+                        </div>
+                        <form action="javascript:void(0);" method="get" class="form-control">
+                            <div class="input-group">
+                                <span class="fas fa-user"></span>
+                                <input type="text" placeholder="Username">
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="submit" class="btn btn-submit">
+                                                Recuperar</button>
+                            </div>
+                            <div class="input-group align-center">
+                                <button type="button" class="btn btn-back" onclick="fnBack()">Voltar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END:MODALS -->
+
+        <!-- BEGIN:HEADER -->
+        <header>
+            <nav class="navbar">
+                <div class="container-nav">
+                    <div class="logo">
+                        <a href="index.html" class="brand-logo"><img src="../images/logo.png"> </a>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="plans.html">Planos e Preços</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                        <li><a href="#modal-login" class="btn-login" onclick="fnModal(this)">Login</a></li>
+                </div>
+            </nav>
+            <div class="jumbotron">
+                <h1 class="jumbotron-heading">Bem-vindo à Targeet</h1>
+                <p class="jumbotron-text">O melhor investimento.</p>
+            </div>
+        </header>
+        <!-- END:HEADER -->
+
+        <!-- BEGIN:MAIN -->
+
+        <main>
+            <!-- OUR SERVICES -->
+            <section class="section-visible fadeIn">
+                <div class="container">
+                    <h1 class="align-center">Nossos serviços</h1>
+                    <div class="services">
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-laptop fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>Identidade visual</h3>
+                                <p>No contexto empresarial, a identidade visual é o conjunto de símbolos e elementos, principalmente gráficos, que é concebido para representar os valores e ideais do empreendimento e apresentá-los ao cliente.Uma identidade
+                                    gráfica equilibrada, marcante e versátil é o primeiro passo para transmitir confiança e estabilidade ao cliente, além de facilitar a identificação da sua empresa nos mais variados locais. </p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-search fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>SEACH ENGINE OPTIMIZATION</h3>
+                                <p>O SEO (Search Engine Optimization), também conhecido como otimização de sites, é rapidamente definido como uma forma de aumentar os acessos do seu site através de um conjunto de técnicas e estratégias que permitem que um
+                                    site melhore seu posicionamento nos resultados orgânicos dos mecanismos de busca, como Google e Bing.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-comment-dots fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>MARKETING DIGITAL</h3>
+                                <p>Marketing Digital é um conjunto de estratégias com o objetivo de gerar resultado online e offline para empresas, marcas e pessoas. Ou seja, um meio de se comunicar com possíveis clientes de forma online e dinâmica, seguindo
+                                    as tendências tecnológicas.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fab fa-google fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>GOOGLE ADWORDS</h3>
+                                <p>O AdWords é a plataforma de publicidade do Google. Através deste serviço, anúncios são exibidos para os usuários em forma de links patrocinados quando alguém realiza uma busca, seja por meio de computadores ou smartphones.
+                                    Os anúncios são exibidos principalmente nos resultados de pesquisas, relacionados às palavras-chave usadas nessa busca.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>REDES SOCIAIS</h3>
+                                <p>Em especial o Instagram e o Facebook, facilitam o reconhecimento do público-alvo que proporcionamos interação com o público, aumento de audiência, engajamento, geração de conteúdo e publicidade que possibilitam as empresas
+                                    estarem mais próximas dos clientes, sabendo suas necessidades/problemas e interesses para com a marca, assim, serão mais lembradas e reconhecidas.</p>
+                            </div>
+                        </div>
+                        <div class="box-big">
+                            <div class="icon-box">
+                                <i class="fas fa-address-card fa-2x"></i>
+                            </div>
+                            <div class="description">
+                                <h3>ANÚNCIOS E CAMPANHAS</h3>
+                                <p>Um conjunto de grupos de anúncios (anúncios, palavras-chave e lances) que compartilham um orçamento, uma segmentação por local e outras configurações. As campanhas são usadas com frequência para organizar categorias de
+                                    produtos ou serviços que você oferece.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PARALAX 1 -->
+
+            <div class="paralax-1">
+                <div class="jumbotron">
+                    <h1 class="jumbotron-heading">Trazemos resultados precisos para o seu negócio.</h1>
+                    <p class="jumbotron-text">Abrange as pequenas empresas até as maiores.</p>
+                </div>
+            </div>
+
+            <!-- OUR CLIENTS -->
+            <section class="section-hidden">
+                <div class="container">
+                    <h1 class="align-center">Alguns Clientes</h1>
+                    <div class="card-collections">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/findnner.png" alt="FinDinner" title="FinDinner">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>FinDinner</h3>
+                                <p>Criando sua conta, você poderá colocar todas as suas preferencias gastronômicas, facilitando assim pela sua busca em nosso App. Assim que você realizar seu cadastro, poderá optar por restaurantes aleatórios em sua busca.
+                                    E deixar que o app faz o resto por você.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="http://findinner.000webhostapp.com/index.html">Acessar</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/website-wesley.jpeg" alt="N3RD" title="N3RD">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>N3RD</h3>
+                                <p>N3ERD, como o próprio nome diz, vem trazendo curiosidades nerds. A plataforma ideal para você que gosta de estar sempre por dentro das novidades do mundo geek.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Acessar</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/website-resolute.png" alt="Resolute Interactions" title="Resolute Interactions">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Resolute Interactions</h3>
+                                <p>O Grupo Resolute Interactions surgiu a partir da união de 5 alunos de Informática para Internet, onde cada um possuía uma habilidade distinta e resolveram passar o seu conhecimento a outras pessoas que possuem dificuldade,
+                                    de forma simples e acessível. </p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Acessar</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/makerbuino.png" alt="Makerbuino" title="Makerbuino">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Makerbuino</h3>
+                                <p>O Makerbuino é um console de jogos que permite construir,literalmente, o seu próprio console de videogame retrô com jogos de 8 bits baseado em Arduino e com código aberto justamente para fazer seus próprios jogos com qualquer
+                                    linguagem de programação.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Acessar</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/diamorfosi.png" alt="Diamórfosi-Games" title="Diamórfosi-Games">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Diamórfosi-Games</h3>
+                                <p>Diamórfosi, é um e-commerce de vendas de PC's gamers. Na qual, o intuito é que o cliente monte o seu próprio pc, de acordo com suas necessidades. Ideal para quem curte jogos, e quer ter um computador perfeito para jogar
+                                    o que quiser.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Acessar</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="../images/nexter.png" alt="Nexter" title="Nexter">
+                            </div>
+                            <div class="card-content align-center">
+                                <h3>Nexter</h3>
+                                <p>TV por assinatura diferenciada que permite que seus clientes tenham a liberdade de escolher a sua grade de programação de acordo com seus programas favoritos e com um preço acessivel.</p>
+                            </div>
+                            <div class="card-button">
+                                <a href="#">Acessar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PARALAX 2 -->
+
+            <div class="paralax-2">
+                <div class="jumbotron">
+                    <h1 class="jumbotron-heading">Marketing Completo</h1>
+                    <p class="jumbotron-text"> A Targeet fará com que o seu negócio alcance reconhecimento.</p>
+                </div>
+            </div>
+
+            <!-- COMMENTS -->
+            <section class="section-hidden">
+                <div class="container">
+                    <h1 class="align-center">Veja a opnião de quem entende</h1>
+                    <div class="comments">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 3</div>
+                                <div class="comment-img">
+                                    <img src="../images/autor1.jpg">
+                                </div>
+                                <div class="box-comment"><br><br><br>
+                                    <p>"Simplesmente sensacional, o maior e melhor acervo para profissionais em divulgação de sites. Excelentes profissionais."</p>
+                                    <p class="comment-author"><span>Arthur Fernandes Gomes</span></p>
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 3</div>
+                                <div class="comment-img">
+                                    <img src="../images/autor2.jpg">
+                                </div>
+                                <div class="box-comment"><br><br><br>
+                                    <p>"Quero parabenizar ao profissionais dessa excelente plataforma, meu comércio cresceu graças a vocês!"</p>
+                                    <p class="comment-author"><span>Luiza Gomes Araujo</span></p>
+                                </div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 3</div>
+                                <div class="comment-img">
+                                    <img src="../images/autor3.jpg">
+                                </div>
+                                <div class="box-comment"><br><br><br>
+                                    <p>"Plataforma de alta confiança"</p>
+                                    <p class="comment-author"><span>Murilo Fernandes Melo</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- END:MAIN -->
+
+        <!-- BEGIN:FOOTER -->
+        <footer>
+            <div class="container-footer">
+                <div class="waper">
+                    <div class="center">
+
+                        <div class="social-icon">
+
+                            <a href="https://www.facebook.com/ttargeet/" alt="Facebook" title="Facebook"><i class="fab fa-facebook gab"></i></a>
+                            <a href="https://www.instagram.com/ttargeet/" alt="Instagram" title="Instagram"><i class="fab fa-instagram gab"></i></a>
+                            <a href="https://twitter.com/targeet2" title="Twitter"><i class="fab fa-twitter gab"></i></a>
+                            <a href="#" title="ttargeet@gmail.com"><i class="fas fa-envelope gab"></i></a>
+
+                        </div>
+                        <div class="select-language">
+                            <a onclick="location.href='../pt-br/'+location.href.split('/').pop()">
+                                <img src="../images/portuguese-icon.png">
+                            </a>
+                            <a onclick="location.href='../en/'+location.href.split('/').pop()">
+                                <img src="../images/english-icon.png">
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="copyright">
+                    <p>&copy 2018 Copyright - Targeet, Todos os direitos reservados.</p>
+                    <img src="../images/Icone1.png" class="icone-logo">
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- END:FOOTER -->
+
+        <!-- IMPORTS JS -->
+
+        <script src="../js/global.js"></script>
+        <script src="../js/index.js"></script>
+
+        <!--  -->
+    </div>
+</body>
+
+</html>
